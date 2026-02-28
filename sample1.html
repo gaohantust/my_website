@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技风产品展示站</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        /* 定制化配色 */
+        :root {
+            --primary-color: #003366; /* 主色：深蓝色 */
+            --bg-color: #f5f7fa;      /* 背景色：浅灰色 */
+            --text-color: #333333;    /* 文字色：深灰色 */
+            --hover-shadow: 0 4px 8px rgba(0, 51, 102, 0.2); /* hover阴影 */
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        /* 导航栏样式 */
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .navbar .menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        /* 轮播图样式 */
+        .carousel {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin: 1rem 0;
+        }
+        .carousel .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        .carousel .slide {
+            width: 100%;
+            height: 100%;
+        }
+        .carousel .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 产品卡片区 */
+        .product-section {
+            padding: 2rem 5%;
+        }
+        .product-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .product-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            box-shadow: var(--hover-shadow);
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        .product-card .name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .product-card .desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .product-card .price {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        /* 底部样式 */
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .navbar .menu {
+                gap: 1rem;
+            }
+            .carousel {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">科技产品展示</div>
+        <ul class="menu">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#products">产品列表</a></li>
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 轮播图 -->
+    <div class="carousel" id="home">
+        <div class="slides">
+            <div class="slide"><img src="https://picsum.photos/1920/400?random=1" alt="产品轮播图1"></div>
+            <div class="slide"><img src="https://picsum.photos/1920/400?random=2" alt="产品轮播图2"></div>
+            <div class="slide"><img src="https://picsum.photos/1920/400?random=3" alt="产品轮播图3"></div>
+        </div>
+    </div>
+
+    <!-- 产品卡片区 -->
+    <section class="product-section" id="products">
+        <h2>核心产品</h2>
+        <div class="product-cards">
+            <div class="product-card">
+                <img src="https://picsum.photos/250/200?random=4" alt="产品1">
+                <div class="name">智能硬件A</div>
+                <div class="desc">高性能智能硬件，支持多场景适配，稳定可靠</div>
+                <div class="price">¥999</div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/250/200?random=5" alt="产品2">
+                <div class="name">云服务B</div>
+                <div class="desc">轻量化云服务，按需付费，秒级部署</div>
+                <div class="price">¥199/月</div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/250/200?random=6" alt="产品3">
+                <div class="name">数据分析C</div>
+                <div class="desc">一站式数据分析平台，可视化展示，精准决策</div>
+                <div class="price">¥2999/年</div>
+            </div>
+            <div class="product-card">
+                <img src="https://picsum.photos/250/200?random=7" alt="产品4">
+                <div class="name">IoT模组D</div>
+                <div class="desc">低功耗IoT模组，兼容多协议，覆盖广</div>
+                <div class="price">¥129/个</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="footer" id="contact">
+        <div>联系方式：123-4567-8901</div>
+        <div>邮箱：contact@techproduct.com</div>
+        <div>地址：北京市海淀区科技园区XX号</div>
+        <div style="margin-top: 1rem;">© 2026 科技产品展示站 版权所有</div>
+    </footer>
+
+    <!-- 轮播图JS逻辑 -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slide').length;
+        
+        // 自动轮播
+        function autoSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            slides.style.transform = `translateX(-${currentSlide * 100 / slideCount}%)`;
+        }
+        setInterval(autoSlide, 3000); // 每3秒切换一次
+    </script>
+</body>
+</html>
