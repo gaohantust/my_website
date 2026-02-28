@@ -1,0 +1,204 @@
+/* --- 全局样式 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    background-color: #f5f7fa;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- 导航栏 --- */
+.navbar {
+    background-color: #003366;
+    padding: 1rem 0;
+    position: sticky; /* 粘性定位，滚动时保持在顶部 */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* 支持移动端换行 */
+}
+
+.navbar-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- 轮播图容器 --- */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px; /* 限制最大高度 */
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: auto; /* 保持图片比例 */
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 图片填充整个容器 */
+}
+
+/* --- 产品卡片区 --- */
+.products-section {
+    padding: 3rem 0;
+    background-color: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #003366;
+    font-size: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 响应式网格 */
+    gap: 2rem;
+    justify-items: center;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 初始阴影 */
+    transition: all 0.3s ease-in-out; /* 平滑过渡 */
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* 向上移动 */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); /* 加深阴影 */
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #003366;
+}
+
+.product-description {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* --- 解决方案/服务/行业 等通用内容区 --- */
+.content-section {
+    padding: 3rem 0;
+}
+
+.content-block {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.content-title {
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+/* --- 关于我们页面 --- */
+.about-us-intro {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #003366;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+/* --- 招聘页面 --- */
+.job-listing {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #003366;
+    border-radius: 0 4px 4px 0;
+}
+
+/* --- 底部 --- */
+.footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.contact-info p {
+    margin: 0.25rem 0;
+}
+
+/* --- 响应式设计 --- */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .navbar-nav li a {
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* 在小屏幕上变为单列 */
+    }
+
+    .content-block {
+        padding: 1.5rem;
+    }
+}
